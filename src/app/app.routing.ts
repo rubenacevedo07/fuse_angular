@@ -31,7 +31,7 @@ export const appRoutes: Route[] = [
             {path: 'example', loadChildren: () => import('app/modules/admin/example/example.module').then(m => m.ExampleModule)},
             {path: 'software', loadChildren: () => import('app/modules/software/software.module').then(m => m.SoftwareModule)},
             {path: 'starwars', loadChildren: () => import('app/modules/admin/starwars/starwars.module').then(m => m.StarwarsModule)},
-            {path: 'fuse-components', loadChildren: () => import('app/modules/auth/fuse-components/fuse-components.module').then(m => m.FuseComponentsModule)},
+            {path: 'fuse', loadChildren: () => import('app/modules/auth/fuse-components/fuse-components.module').then(m => m.FuseComponentsModule)},
       
             {path: 'travels', loadChildren: () => import('app/modules/auth/travels/travels.module').then(m => m.TravelsModule)},  
         ]

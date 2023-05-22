@@ -17,10 +17,12 @@ import { MediaWatcherComponent } from 'app/modules/auth/fuse-components/services
 import { SplashScreenComponent } from 'app/modules/auth/fuse-components/services/splash-screen/splash-screen.component';
 import { FindByKeyComponent } from 'app/modules/auth/fuse-components/pipes/find-by-key/find-by-key.component';
 import { MustMatchComponent } from 'app/modules/auth/fuse-components/validators/must-match/must-match.component';
+import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
 
 export const fuseComponentsRoutes: Route[] = [
     {
         path     : '',
+        canMatch: [NoAuthGuard],
         component: FuseComponentsComponent,
         children : [
             {
