@@ -10,7 +10,7 @@ import { InitialDataResolver } from 'app/app.resolvers';
 export const appRoutes: Route[] = [
 
     // Redirect empty path to '/example'
-    {path: '', pathMatch : 'full', redirectTo: 'example'},
+    {path: '', pathMatch : 'full', redirectTo: 'travels'},
 
     // Redirect signed-in user to the '/example'
     //
@@ -19,6 +19,23 @@ export const appRoutes: Route[] = [
     // location. This is a small convenience to keep all main routes together here on this file.
     {path: 'signed-in-redirect', pathMatch : 'full', redirectTo: 'example'},
 
+    // Admin routes
+    {
+        path: '',
+        canMatch: [NoAuthGuard],
+        component: LayoutComponent,
+        resolve: {
+            initialData: InitialDataResolver,
+        },
+        children: [
+            {path: 'example', loadChildren: () => import('app/modules/admin/example/example.module').then(m => m.ExampleModule)},
+            {path: 'software', loadChildren: () => import('app/modules/software/software.module').then(m => m.SoftwareModule)},
+            {path: 'starwars', loadChildren: () => import('app/modules/admin/starwars/starwars.module').then(m => m.StarwarsModule)},
+            {path: 'fuse-components', loadChildren: () => import('app/modules/auth/fuse-components/fuse-components.module').then(m => m.FuseComponentsModule)},
+      
+            {path: 'travels', loadChildren: () => import('app/modules/auth/travels/travels.module').then(m => m.TravelsModule)},  
+        ]
+    },
 
     // Auth routes for guests
     {
@@ -30,7 +47,6 @@ export const appRoutes: Route[] = [
         },
         children: [
             {path: 'usa', loadChildren: () => import('app/modules/auth/fuse-components/fuse-components.module').then(m => m.FuseComponentsModule)},
-            {path: 'rac', loadChildren: () => import('app/modules/software/software.module').then(m => m.SoftwareModule)},
             {path: 'confirmation-required', loadChildren: () => import('app/modules/auth/confirmation-required/confirmation-required.module').then(m => m.AuthConfirmationRequiredModule)},
             {path: 'forgot-password', loadChildren: () => import('app/modules/auth/forgot-password/forgot-password.module').then(m => m.AuthForgotPasswordModule)},
             {path: 'reset-password', loadChildren: () => import('app/modules/auth/reset-password/reset-password.module').then(m => m.AuthResetPasswordModule)},
@@ -38,6 +54,8 @@ export const appRoutes: Route[] = [
             {path: 'sign-up', loadChildren: () => import('app/modules/auth/sign-up/sign-up.module').then(m => m.AuthSignUpModule)}
         ]
     },
+
+
 
     // Auth routes for authenticated users
     {
@@ -74,12 +92,7 @@ export const appRoutes: Route[] = [
             initialData: InitialDataResolver,
         },
         children: [
-            {path: 'example', loadChildren: () => import('app/modules/admin/example/example.module').then(m => m.ExampleModule)},
-            {path: 'software', loadChildren: () => import('app/modules/software/software.module').then(m => m.SoftwareModule)},
-            {path: 'starwars', loadChildren: () => import('app/modules/admin/starwars/starwars.module').then(m => m.StarwarsModule)},
-            {path: 'fuse-components', loadChildren: () => import('app/modules/auth/fuse-components/fuse-components.module').then(m => m.FuseComponentsModule)},
-            {path: 'travels', loadChildren: () => import('app/modules/auth/travels/travels.module').then(m => m.TravelsModule)},  
-     
+                 
         ]
     }
 ];
