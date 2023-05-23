@@ -11,10 +11,19 @@ import { mockApiServices } from 'app/mock-api';
 import { LayoutModule } from 'app/layout/layout.module';
 import { AppComponent } from 'app/app.component';
 import { appRoutes } from 'app/app.routing';
-import { SoftwareComponent } from './modules/software/software.component';
-import { MatDrawer } from '@angular/material/sidenav';
-import { StarwarsComponent } from './modules/admin/starwars/starwars.component';
-import { TravelsComponent } from './modules/auth/travels/travels.component';
+
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from "@angular/fire/compat";
+import { environment } from '../environments/environment.development';
+/*
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+*/
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+
 
 const routerConfig: ExtraOptions = {
     preloadingStrategy       : PreloadAllModules,
@@ -39,7 +48,12 @@ const routerConfig: ExtraOptions = {
         CoreModule,
         
         // Layout module of your application
-        LayoutModule
+        LayoutModule,
+        AngularFireModule,
+        // Firebase
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        /*provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+        provideFirestore(() => getFirestore()),*/
     ],
     bootstrap   : [
         AppComponent

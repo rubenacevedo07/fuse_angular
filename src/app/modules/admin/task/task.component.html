@@ -23,11 +23,28 @@
     <div class="flex-auto p-6 sm:p-10">
 
         <div class="prose prose-sm max-w-3xl">
-            <p>Test5</p>
-            
-            <p>Test6</p>
+            <div class="container-wrapper">
+                <div class="container">
+                  <h2>Backlog</h2>
+              
+                  
+                <!-- Introduction -->
+                <table>
+                    <thead>
+                        <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let task of todo">
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.description }}</td>
+                        
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
     </div>
-
 </div>
