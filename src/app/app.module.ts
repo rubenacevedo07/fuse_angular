@@ -15,7 +15,7 @@ import { appRoutes } from 'app/app.routing';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from "@angular/fire/compat";
-import { environment } from '../environments/environment.development';
+import { environment } from '../environments/environment';
 /*
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';

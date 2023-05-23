@@ -3,13 +3,6 @@ import { FuseNavigationItem } from '@fuse/components/navigation';
 
 export const defaultNavigation: FuseNavigationItem[] = [
     {
-        id   : 'example',
-        title: 'Example',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/example'
-    },
-    {
         id   : 'software',
         title: 'Software',
         type : 'basic',
@@ -36,17 +29,18 @@ export const defaultNavigation: FuseNavigationItem[] = [
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
         link : '/task'
+    },
+    {
+        id   : 'students',
+        title: 'Students',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/students'
     }
+
 ];
 export const compactNavigation: FuseNavigationItem[] = [
     {
-        id   : 'example',
-        title: 'Example',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/example'
-    },
-    {
         id   : 'software',
         title: 'Software',
         type : 'basic',
@@ -73,17 +67,17 @@ export const compactNavigation: FuseNavigationItem[] = [
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
         link : '/task'
+    },
+    {
+        id   : 'students',
+        title: 'Students',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/students'
     }
 ];
 export const futuristicNavigation: FuseNavigationItem[] = [
     {
-        id   : 'example',
-        title: 'Example',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/example'
-    },
-    {
         id   : 'software',
         title: 'Software',
         type : 'basic',
@@ -110,17 +104,17 @@ export const futuristicNavigation: FuseNavigationItem[] = [
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
         link : '/task'
+    },
+    {
+        id   : 'students',
+        title: 'Students',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/students'
     }
 ];
 export const horizontalNavigation: FuseNavigationItem[] = [
     {
-        id   : 'example',
-        title: 'Example',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/example'
-    },
-    {
         id   : 'software',
         title: 'Software',
         type : 'basic',
@@ -147,5 +141,12 @@ export const horizontalNavigation: FuseNavigationItem[] = [
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
         link : '/task'
+    },
+    {
+        id   : 'students',
+        title: 'Students',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/students'
     }
 ];
