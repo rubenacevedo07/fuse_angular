@@ -1,8 +1,13 @@
 import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, HostBinding, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ViewChild, EventEmitter, HostBinding, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { filter, Subject, takeUntil } from 'rxjs';
 import { FirebaseService } from 'app/shared/firebase/firebase.service';
 import { Student } from 'app/model/student';
+import {MatTableModule} from '@angular/material/table';
+import {NgFor} from '@angular/common';
+import { DataSource } from '@angular/cdk/table';
+//import { MatTableDataSource, MatSort } from '@angular/material';
+import { MatButtonToggleChange } from '@angular/material/button-toggle';
 
 @Component({
   selector: 'app-student',
@@ -10,6 +15,40 @@ import { Student } from 'app/model/student';
   styleUrls: ['./student.component.scss']
 })
 export class StudentComponent implements OnInit {
+
+  isLoading = true;
+  dataSource! : any;
+  displayedColumns: string[] = ['first_name', 'last_name', 'email', 'mobile'];
+
+  columns = [
+    {
+      columnDef: 'id',
+      header: 'ID',
+      cell: (element: Student) => `${element.id}`,
+    },
+    {
+      columnDef: 'first_name',
+      header: 'Name',
+      cell: (element: Student) => `${element.first_name}`,
+    },
+    {
+      columnDef: 'last_name',
+      header: 'Lastname',
+      cell: (element: Student) => `${element.last_name}`,
+    },
+    {
+      columnDef: 'email',
+      header: 'Email',
+      cell: (element: Student) => `${element.email}`,
+    },
+    {
+      columnDef: 'mobile',
+      header: 'Mobile',
+      cell: (element: Student) => `${element.mobile}`,
+    },
+  ];
+ 
+  
 
   drawerMode: 'over' | 'side' = 'side';
   drawerOpened: boolean = true;
@@ -23,6 +62,7 @@ export class StudentComponent implements OnInit {
     email: '',
     mobile: ''
   };
+
   id: string = '';
   first_name: string = '';
   last_name: string = '';
@@ -54,11 +94,13 @@ export class StudentComponent implements OnInit {
     });
 
     this.getAllStudents();
+    this.isLoading = false;        
+    
+    //dataSource = this.studentsList;
+
   }
 
-  // register() {
-  //   this.auth.logout();
-  // }
+  
 
   getAllStudents() {
 
@@ -67,7 +109,10 @@ export class StudentComponent implements OnInit {
       this.studentsList = res.map((e: any) => {
         const data = e.payload.doc.data();
         data.id = e.payload.doc.id;
+        
         return data;
+      
+
       })
 
     }, err => {

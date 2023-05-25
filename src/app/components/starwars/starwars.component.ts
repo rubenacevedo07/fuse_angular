@@ -1,6 +1,15 @@
 import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, HostBinding, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { filter, Subject, takeUntil } from 'rxjs';
+import {MatTableModule} from '@angular/material/table';
+import { Observable, throwError } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+export interface PetElement {
+    id: string;
+    type: string;
+    price: string;
+  }
 
 @Component({
   selector: 'app-starwars',
@@ -8,7 +17,13 @@ import { filter, Subject, takeUntil } from 'rxjs';
   styleUrls: ['./starwars.component.scss']
 })
 export class StarwarsComponent {
+    isLoading = true;
+    dataSource! : any;
+    data! : any;
+    displayedColumns: string[] = ['id', 'type', 'price'];
+    
   
+
   drawerMode: 'over' | 'side' = 'side';
   drawerOpened: boolean = true;
   private _unsubscribeAll: Subject<any> = new Subject<any>();
@@ -16,7 +31,7 @@ export class StarwarsComponent {
   /**
    * Constructor
    */
-  constructor(private _fuseMediaWatcherService: FuseMediaWatcherService)
+  constructor(private _fuseMediaWatcherService: FuseMediaWatcherService, private httpClient: HttpClient)
   {
   }
 
@@ -29,6 +44,7 @@ export class StarwarsComponent {
      */
     ngOnInit(): void
     {
+        this.loadPets();
         // Subscribe to media changes
         this._fuseMediaWatcherService.onMediaChange$
             .pipe(takeUntil(this._unsubscribeAll))
@@ -46,6 +62,19 @@ export class StarwarsComponent {
                     this.drawerOpened = false;
                 }
             });
+    }
+   
+    getPets(): Observable<any> {
+        return this.httpClient
+          .get<any>('api/pets');
+    }
+
+    loadPets() {    
+        return this.getPets().subscribe((data1: {}) => {
+          this.dataSource = data1;
+          this.isLoading = false;
+        });
+        
     }
 
     /**

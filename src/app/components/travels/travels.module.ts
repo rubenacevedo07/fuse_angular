@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
-import { TravelsComponent } from 'app/modules/auth/travels/travels.component';
+import { TravelsComponent } from 'app/components/travels/travels.component';
 import { MatIconModule } from '@angular/material/icon';
 
 

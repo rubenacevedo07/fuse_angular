@@ -1,0 +1,26 @@
+table {
+    width: 100%;
+}
+
+.mat-column-id {
+    width: 32px;
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: center;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+    vertical-align: inherit;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+}
+
+.mat-mdc-header-cell {
+    vertical-align: inherit;
+}
+

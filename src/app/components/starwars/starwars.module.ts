@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
-import { StarwarsComponent } from 'app/modules/admin/starwars/starwars.component';
+import { StarwarsComponent } from 'app/components/starwars/starwars.component';
 import { CommonModule } from '@angular/common';  
+import { MatTableModule } from '@angular/material/table'
 
 const starwarsRoutes: Route[] = [
     {
@@ -17,6 +18,7 @@ const starwarsRoutes: Route[] = [
     imports     : [
         RouterModule.forChild(starwarsRoutes),
         CommonModule,
+        MatTableModule
     ]
 })
 export class StarwarsModule

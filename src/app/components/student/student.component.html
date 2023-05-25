@@ -1,0 +1,119 @@
+<div class="flex flex-col flex-auto min-w-0">
+
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
+        <div class="flex-1 min-w-0">
+            <!-- Breadcrumbs -->
+            <div class="flex flex-wrap items-center font-medium">
+                <a class="whitespace-nowrap text-primary-500">Api</a>
+                <div class="flex items-center ml-1 whitespace-nowrap">
+                    <a class="ml-1 text-primary-500"></a>
+                </div>
+            </div>
+            <!-- Title -->
+            <div class="mt-2">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+                    Firebase 
+                </h2>
+            </div>
+        </div>
+    </div>
+
+  
+        <!-- Main -->
+    <div class="flex-auto p-6 sm:p-10">
+      
+            <!-- Card #1 -->
+            <fuse-card class="flex flex-col rmb-1">
+                <div class="m-8">
+                    <div class="mt-4">Firebase student form</div>
+                    <mat-card-content>
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label m-3">
+                            <input type="text" class="mdc-text-field__input rac-input" id="firstName" name="firstname"
+                                [(ngModel)]="first_name">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="firstname" class="mdc-floating-label">First name</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label m-3">
+                            <input type="text" class="mdc-text-field__input rac-input" id="lastName" name="lastName"
+                                [(ngModel)]="last_name">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="lastName" class="mdc-floating-label">Last name</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label m-3">
+                            <input type="email" class="mdc-text-field__input rac-input" id="email" name="email"
+                                [(ngModel)]="email">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="email" class="mdc-floating-label">Email address</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label m-3">
+                            <input type="text" class="mdc-text-field__input rac-input" id="mobile" name="mobile"
+                                [(ngModel)]="mobile">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="mobile" class="mdc-floating-label">Mobile</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <button mat-flat-button color="primary" (click)="addStudent()">Add Student</button>
+                    </mat-card-content>
+                
+                </div>
+
+            </fuse-card>
+       
+            <!-- Table -->
+            <table mat-table [dataSource]="studentsList" class="rmb-1"
+            *ngIf="!isLoading">
+                <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="first_name">
+                    <th mat-header-cell mat-column-position *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="last_name">
+                    <th mat-header-cell *matHeaderCellDef> Lastname </th>
+                    <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef> Email </th>
+                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="mobile">
+                    <th mat-header-cell *matHeaderCellDef> Mobile </th>
+                    <td mat-cell *matCellDef="let element"> {{element.mobile}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+           
+       
+      
+    </div>
+</div>

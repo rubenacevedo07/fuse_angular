@@ -24,11 +24,11 @@ export const defaultNavigation: FuseNavigationItem[] = [
         link : '/fuse'
     },
     {
-        id   : 'task',
-        title: 'Task',
+        id   : 'activities',
+        title: 'Activities',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/task'
+        link : '/activities'
     },
     {
         id   : 'students',
@@ -62,11 +62,11 @@ export const compactNavigation: FuseNavigationItem[] = [
         link : '/fuse'
     },
     {
-        id   : 'task',
-        title: 'Task',
+        id   : 'activities',
+        title: 'Activities',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/task'
+        link : '/activities'
     },
     {
         id   : 'students',
@@ -99,11 +99,11 @@ export const futuristicNavigation: FuseNavigationItem[] = [
         link : '/fuse'
     },
     {
-        id   : 'task',
-        title: 'Task',
+        id   : 'activities',
+        title: 'Activities',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/task'
+        link : '/activities'
     },
     {
         id   : 'students',
@@ -136,11 +136,11 @@ export const horizontalNavigation: FuseNavigationItem[] = [
         link : '/fuse'
     },
     {
-        id   : 'task',
-        title: 'Task',
+        id   : 'activities',
+        title: 'Activities',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/task'
+        link : '/activities'
     },
     {
         id   : 'students',

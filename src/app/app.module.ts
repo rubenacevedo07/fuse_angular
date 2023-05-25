@@ -16,14 +16,6 @@ import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from "@angular/fire/compat";
 import { environment } from '../environments/environment';
-/*
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-*/
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-
 
 const routerConfig: ExtraOptions = {
     preloadingStrategy       : PreloadAllModules,

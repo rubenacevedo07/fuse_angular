@@ -10,7 +10,7 @@ import { InitialDataResolver } from 'app/app.resolvers';
 export const appRoutes: Route[] = [
 
     // Redirect empty path to '/example'
-    {path: '', pathMatch : 'full', redirectTo: 'travels'},
+    {path: '', pathMatch : 'full', redirectTo: 'software'},
 
     // Redirect signed-in user to the '/example'
     //
@@ -28,14 +28,13 @@ export const appRoutes: Route[] = [
             initialData: InitialDataResolver,
         },
         children: [
-            {path: 'students', loadChildren: () => import('app/modules/admin/student/student.module').then(m => m.StudentModule)},
+            {path: 'students', loadChildren: () => import('app/components/student/student.module').then(m => m.StudentModule)},
             {path: 'example', loadChildren: () => import('app/modules/admin/example/example.module').then(m => m.ExampleModule)},
-            {path: 'software', loadChildren: () => import('app/modules/software/software.module').then(m => m.SoftwareModule)},
-            {path: 'starwars', loadChildren: () => import('app/modules/admin/starwars/starwars.module').then(m => m.StarwarsModule)},
+            {path: 'software', loadChildren: () => import('app/components/software/software.module').then(m => m.SoftwareModule)},
+            {path: 'starwars', loadChildren: () => import('app/components/starwars/starwars.module').then(m => m.StarwarsModule)},
             {path: 'fuse', loadChildren: () => import('app/modules/auth/fuse-components/fuse-components.module').then(m => m.FuseComponentsModule)},
-            {path: 'travels', loadChildren: () => import('app/modules/auth/travels/travels.module').then(m => m.TravelsModule)},  
-            {path: 'task', loadChildren: () => import('app/modules/admin/task/task.module').then(m => m.TaskModule)},  
-       ]
+            {path: 'activities', loadChildren: () => import('app/components/activities/activities.module').then(m => m.ActivitiesModule)},  
+           ]
     },
 
     // Auth routes for guests
