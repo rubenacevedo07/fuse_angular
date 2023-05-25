@@ -58,6 +58,7 @@
                             "src/styles/tailwind.scss"
                         ],
                         "scripts": []
+
                     },
                     "configurations": {
                         "production": {
