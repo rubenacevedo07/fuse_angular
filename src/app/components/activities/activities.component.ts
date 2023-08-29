@@ -92,17 +92,17 @@ fetch('https://bf8fqwvrr8.execute-api.us-east-1.amazonaws.com/Prod/hello', {mode
 
     getSpaceships(): Observable<any> {
       return this.httpClient
-        .get<any>('api/starwars');
+        .get<any>('https://run.mocky.io/v3/7a7a924f-72dd-4cd7-aefa-12be3608e839');
     }
 
     getPets(): Observable<any> {
       return this.httpClient
-        .get<any>('api/pets');
+        .get<any>('https://oou88whst5.execute-api.us-east-2.amazonaws.com/Stage/pets?api_key=FGl1oSRv7P6uMCSsyjprh2xpurPJDa6q6Hx3BBX2');
     }
 
     getFalse(): Observable<any> {
       return this.httpClient
-        .get<any>('api/false');
+        .get<any>('https://oou88whst5.execute-api.us-east-2.amazonaws.com/Stage/pets/');
     }
 
     /**

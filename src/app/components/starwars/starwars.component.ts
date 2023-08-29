@@ -66,7 +66,7 @@ export class StarwarsComponent {
    
     getPets(): Observable<any> {
         return this.httpClient
-          .get<any>('api/pets');
+          .get<any>('https://oou88whst5.execute-api.us-east-2.amazonaws.com/Stage/pets?api_key=FGl1oSRv7P6uMCSsyjprh2xpurPJDa6q6Hx3BBX2');
     }
 
     loadPets() {    
