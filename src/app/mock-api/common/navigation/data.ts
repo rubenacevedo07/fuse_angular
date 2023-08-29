@@ -17,6 +17,20 @@ export const defaultNavigation: FuseNavigationItem[] = [
         link : '/starwars'
     },
     {
+        id   : 'ecommerce',
+        title: 'Ecommerce',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/ecommerce'
+    },
+    {
+        id   : 'inventory',
+        title: 'inventory',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/inventory'
+    },    
+    {
         id   : 'fuse',
         title: 'Fuse',
         type : 'basic',
@@ -55,6 +69,20 @@ export const compactNavigation: FuseNavigationItem[] = [
         link : '/starwars'
     },
     {
+        id   : 'ecommerce',
+        title: 'Ecommerce',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/ecommerce'
+    },
+    {
+        id   : 'inventory',
+        title: 'inventory',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/inventory'
+    },    
+    {
         id   : 'fuse',
         title: 'Fuse',
         type : 'basic',
@@ -92,6 +120,20 @@ export const futuristicNavigation: FuseNavigationItem[] = [
         link : '/starwars'
     },
     {
+        id   : 'ecommerce',
+        title: 'Ecommerce',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/ecommerce'
+    },
+    {
+        id   : 'inventory',
+        title: 'inventory',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/inventory'
+    },    
+    {
         id   : 'fuse',
         title: 'Fuse',
         type : 'basic',
@@ -128,6 +170,20 @@ export const horizontalNavigation: FuseNavigationItem[] = [
         icon : 'heroicons_outline:chart-pie',
         link : '/starwars'
     },
+    {
+        id   : 'ecommerce',
+        title: 'Ecommerce',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/ecommerce'
+    },
+    {
+        id   : 'inventory',
+        title: 'inventory',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/inventory'
+    },    
     {
         id   : 'fuse',
         title: 'Fuse',

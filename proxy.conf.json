@@ -1,25 +1,30 @@
 {
-    "/api/activities": {
-      "target": "https://5l2z1qnym5.execute-api.us-east-1.amazonaws.com/Prod/activities",
-      "secure": false
-    },
-    "/api/starwars": {
-        "target": "https://run.mocky.io/v3/7a7a924f-72dd-4cd7-aefa-12be3608e839",
-        "secure": true,
-        "changeOrigin": true,
-        "logLevel": "debug"
-      },
-      "/api/pets": {
-          "target": "https://oou88whst5.execute-api.us-east-2.amazonaws.com/Stage/pets?api_key=FGl1oSRv7P6uMCSsyjprh2xpurPJDa6q6Hx3BBX2",
-          "secure": true,
-          "changeOrigin": true,
-          "logLevel": "debug"
-        },
-        "/api/false": {
-            "target": "https://oou88whst5.execute-api.us-east-2.amazonaws.com/Stage/pets/",
-            "secure": false,
-            "changeOrigin": true,
-            "logLevel": "debug"
-          }
-      
+	"/api/activities": {
+		"target": "https://5l2z1qnym5.execute-api.us-east-1.amazonaws.com/Prod/activities",
+		"secure": false
+	},
+	"/api/starwars": {
+		"target": "https://run.mocky.io/v3/7a7a924f-72dd-4cd7-aefa-12be3608e839",
+		"secure": true,
+		"changeOrigin": true,
+		"logLevel": "debug"
+	},
+	"/api/pets": {
+		"target": "https://oou88whst5.execute-api.us-east-2.amazonaws.com/Stage/pets?api_key=FGl1oSRv7P6uMCSsyjprh2xpurPJDa6q6Hx3BBX2",
+		"secure": true,
+		"changeOrigin": true,
+		"logLevel": "debug"
+	},
+	"/api/false": {
+		"target": "https://oou88whst5.execute-api.us-east-2.amazonaws.com/Stage/pets/",
+		"secure": false,
+		"changeOrigin": true,
+		"logLevel": "debug"
+	},
+	"/api/starships": {
+		"target": "https://localhost:7188/api/Starships",
+		"secure": true,
+		"changeOrigin": true,
+		"logLevel": "debug"
+	}
 }

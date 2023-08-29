@@ -34,6 +34,8 @@ export const appRoutes: Route[] = [
             {path: 'starwars', loadChildren: () => import('app/components/starwars/starwars.module').then(m => m.StarwarsModule)},
             {path: 'fuse', loadChildren: () => import('app/modules/auth/fuse-components/fuse-components.module').then(m => m.FuseComponentsModule)},
             {path: 'activities', loadChildren: () => import('app/components/activities/activities.module').then(m => m.ActivitiesModule)},  
+            {path: 'ecommerce', loadChildren: () => import('app/components/ecommerce/ecommerce.module').then(m => m.ECommerceModule)},
+            {path: 'inventory', loadChildren: () => import('app/components/inventory/inventory.module').then(m => m.InventoryModule)},
            ]
     },
 
